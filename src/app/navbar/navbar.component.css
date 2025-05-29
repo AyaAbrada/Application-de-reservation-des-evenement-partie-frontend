@@ -1,0 +1,31 @@
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3c007e;
+  color: white; }
+
+.title {
+  color: rgb(255, 255, 255); font-size:
+  2rem; font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;}
+
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0; }
+
+.nav-list a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;}
+
+.nav-list a:hover {
+  color: #d1d1d1;
+  border-bottom: 2px solid #d1d1d1; }
