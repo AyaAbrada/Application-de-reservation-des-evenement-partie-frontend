@@ -1,30 +1,41 @@
 <div>
-  <form>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="fullName">Nom complet</label>
-      <input type="text" id="fullName" name="fullName" required placeholder="Entrez votre nom complet"/>
+      <input type="text" id="fullName" formControlName="fullName" required placeholder="Entrez votre nom complet"/>
+      <div class="text-danger" *ngIf="signupForm.controls['fullName'].touched && signupForm.controls['fullName'].errors?.['required']">
+        <span>This is required</span>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="username">Nom d'utilisateur</label>
-      <input type="text" id="username" name="username" required placeholder="Entrez votre nom d'utilisateur"/>
+      <input type="text" id="username" formControlName="username" required placeholder="Entrez votre nom d'utilisateur"/>
+      <div class="text-danger" *ngIf="signupForm.controls['username'].touched && signupForm.controls['username'].errors?.['required']">
+        <span>This is required</span>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="password">Mot de passe</label>
-      <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe"/>
+      <input type="password" id="password" formControlName="password" required placeholder="Entrez votre mot de passe"/>
+      <div class="text-danger" *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].errors?.['required']">
+        <span>This is required</span>
+      </div>
     </div>
 
     <div class="form-group">
       <label for="role">Rôle</label>
-      <select id="role" name="role" required>
+      <select id="role" formControlName="role" required>
         <option value="">-- Sélectionnez un rôle --</option>
         <option value="ADMIN">Admin</option>
         <option value="USER">Utilisateur</option>
-        <!-- Ajoutez d'autres rôles si nécessaire -->
       </select>
+      <div class="text-danger" *ngIf="signupForm.controls['role'].touched && signupForm.controls['role'].errors?.['required']">
+        <span>This is required</span>
+      </div>
     </div>
 
-    <button type="submit" >S'inscrire</button>
+    <button type="submit" [disabled]="!signupForm.valid">S'inscrire</button>
   </form>
 </div>
