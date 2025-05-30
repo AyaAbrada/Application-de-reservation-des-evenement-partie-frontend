@@ -11,6 +11,9 @@ div {
 .form-group {
   margin-bottom: 1.2rem;
 }
+.text-danger{
+  color: red;
+}
 
 label {
   display: block;

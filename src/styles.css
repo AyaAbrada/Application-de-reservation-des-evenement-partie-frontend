@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('https://th.bing.com/th/id/R.81a4596994f73aeb3be0d7dd30265e10?rik=NHtkXHckm1Qtww&riu=http%3a%2f%2fwww.maximumwall.com%2fwp-content%2fuploads%2f2016%2f10%2ffond-ecran-wallpaper-image-abstrait-bleu-01.jpg&ehk=Fs2AshdbqtUbba4w5BQy1gd7CWQqt3v%2bnJPXhKKl7rE%3d&risl=&pid=ImgRaw&r=0');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}

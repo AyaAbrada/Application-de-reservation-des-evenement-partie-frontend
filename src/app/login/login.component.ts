@@ -1,9 +1,9 @@
-import {Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IntegrationService } from '../services/integration.service';
 import { LoginRequest } from '../models/login-request';
 import { CommonModule } from '@angular/common';
-import {Router, RouterLink} from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -18,11 +18,11 @@ export class LoginComponent {
     password: new FormControl('', Validators.required)
   });
 
-  router = inject(Router);
+  private router = inject(Router);
 
   constructor(private integration: IntegrationService) {}
 
-  Login() {
+  login(): void {
     if (this.userForm.invalid) {
       alert('Veuillez remplir tous les champs.');
       return;
@@ -35,12 +35,12 @@ export class LoginComponent {
 
     this.integration.doLogin(request).subscribe({
       next: (res) => {
-        console.log('Token reçu : ' + res.token);
-        this.router.navigateByUrl('dashboard')
+        console.log('Token reçu :', res.token);
+        this.router.navigateByUrl('/dashboard');
       },
       error: (err) => {
-        console.error('Erreur de connexion :', err);
-        alert('Nom d’utilisateur ou mot de passe incorrect.');
+        alert('Nom d\'utilisateur ou mot de passe incorrect');
+        console.error(err);
       }
     });
   }
